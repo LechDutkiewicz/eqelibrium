@@ -1,0 +1,397 @@
+/*
+  Theme Name: Lawyeria Lite Child
+  Author: Lech Dutkiewicz
+  Author URI: github.com/LechDutkiewicz
+  Created Date: 03/07/2017
+  Template: lawyeria-lite
+  License: GNU General Public License version 3.0
+  License URI: http://www.gnu.org/licenses/gpl-3.0.html
+  Text Domain: lawyeria-lite-child
+  Tags: black, blue, gray, white, light,silver, one-column,right-sidebar, responsive-layout, fixed-layout,custom-background,theme-options, custom-header, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready
+  */
+/**
+ *
+ * Mixins
+ *
+ */
+/**
+ *
+ * Body and typo
+ *
+ */
+/* line 68, assets/scss/style.scss */
+body {
+  background: #F2F2F2;
+  font-size: 16px;
+  color: #666;
+}
+
+/**
+ *
+ * Elements
+ *
+ */
+/* line 80, assets/scss/style.scss */
+.wrapper {
+  height: 100%;
+}
+
+/**
+ *
+ * Navi
+ *
+ */
+/* line 90, assets/scss/style.scss */
+.header-contact {
+  width: 640px;
+  max-width: 100%;
+  color: #2B4FA4;
+  font-weight: 300;
+  margin-top: 40px;
+  line-height: 34px;
+}
+
+/* line 99, assets/scss/style.scss */
+.header-left {
+  margin: 40px 0 30px;
+}
+/* line 101, assets/scss/style.scss */
+.header-left .logo {
+  height: auto;
+}
+
+/* line 116, assets/scss/style.scss */
+nav li a {
+  padding: 0;
+  border: 0;
+  color: #2B4FA4;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+  letter-spacing: .5px;
+}
+/* line 125, assets/scss/style.scss */
+nav li a:before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #2B4FA4;
+  margin-right: 8px;
+  border: 1px solid #2B4FA4;
+}
+/* line 136, assets/scss/style.scss */
+nav li a:hover {
+  border: 0;
+}
+/* line 138, assets/scss/style.scss */
+nav li a:hover:before {
+  background-color: transparent;
+}
+
+/* line 146, assets/scss/style.scss */
+.wide-nav {
+  height: 75px;
+  line-height: 75px;
+  background: #172C5C;
+}
+/* line 150, assets/scss/style.scss */
+.wide-nav h3 {
+  color: #FFF;
+  font-size: 30px;
+}
+
+/**
+ *
+ * Home
+ *
+ */
+/* line 162, assets/scss/style.scss */
+#subheader {
+  height: 450px;
+  position: relative;
+  background-position: center 15%;
+}
+/* line 166, assets/scss/style.scss */
+#subheader .subheader-color {
+  background: none;
+  padding: 0;
+  box-shadow: none;
+}
+/* line 170, assets/scss/style.scss */
+#subheader .subheader-color .full-header-content {
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 174, assets/scss/style.scss */
+#subheader .subheader-color .full-header-content h3 {
+  text-shadow: none;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 74px;
+}
+/* line 180, assets/scss/style.scss */
+#subheader .subheader-color .full-header-content-no-sidebar {
+  margin: 0 !important;
+}
+/* line 186, assets/scss/style.scss */
+#subheader .second-subheader h3 {
+  color: #2B4FA4;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* line 196, assets/scss/style.scss */
+#content .content-article h3 {
+  font-size: 36px;
+  color: #2B4FA4;
+  line-height: 1.4;
+  font-weight: 300;
+}
+/* line 202, assets/scss/style.scss */
+#content .content-article p {
+  color: #666;
+  line-height: 1.75;
+}
+
+/* line 209, assets/scss/style.scss */
+#features {
+  padding: 105px 0;
+  box-shadow: none;
+  background-image: url(images/glowna-2.png);
+}
+/* line 213, assets/scss/style.scss */
+#features .features-box {
+  background-color: transparent;
+  padding: 30px 20px;
+  box-shadow: none;
+  height: 280px;
+  border: 2px solid #FFF;
+}
+/* line 219, assets/scss/style.scss */
+#features .features-box h4 {
+  color: #FFF;
+  text-align: left;
+  margin: 0 0 25px;
+  border-bottom: 2px solid;
+  padding-bottom: 25px;
+}
+/* line 226, assets/scss/style.scss */
+#features .features-box p {
+  color: #FFF;
+  text-align: left;
+  line-height: 1.75;
+}
+
+/**
+ *
+ * Footer
+ *
+ */
+/* line 240, assets/scss/style.scss */
+#footer {
+  background: #40A9F3;
+}
+/* line 243, assets/scss/style.scss */
+#footer .footer-box:last-child {
+  float: right;
+}
+/* line 246, assets/scss/style.scss */
+#footer .footer-box .footer-box-title {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Roboto Slab", sans-serif;
+  letter-spacing: 3px;
+}
+/* line 252, assets/scss/style.scss */
+#footer .footer-box .wpcf7-text,
+#footer .footer-box .wpcf7-textarea {
+  background-color: transparent;
+  border: 1px solid #000;
+}
+/* line 39, assets/scss/style.scss */
+#footer .footer-box .wpcf7-text::-webkit-input-placeholder, #footer .footer-box .wpcf7-textarea::-webkit-input-placeholder {
+  color: #FFF;
+}
+/* line 39, assets/scss/style.scss */
+#footer .footer-box .wpcf7-text:-moz-placeholder, #footer .footer-box .wpcf7-textarea:-moz-placeholder {
+  color: #FFF;
+}
+/* line 39, assets/scss/style.scss */
+#footer .footer-box .wpcf7-text::-moz-placeholder, #footer .footer-box .wpcf7-textarea::-moz-placeholder {
+  color: #FFF;
+}
+/* line 39, assets/scss/style.scss */
+#footer .footer-box .wpcf7-text:-ms-input-placeholder, #footer .footer-box .wpcf7-textarea:-ms-input-placeholder {
+  color: #FFF;
+}
+/* line 260, assets/scss/style.scss */
+#footer .footer-box .wpcf7-submit {
+  border: 0;
+  background: #FFF;
+  box-shadow: none;
+  text-transform: uppercase;
+  color: #2B4FA4;
+  letter-spacing: 5px;
+}
+/* line 267, assets/scss/style.scss */
+#footer .footer-box .wpcf7-submit:hover, #footer .footer-box .wpcf7-submit:focus {
+  background-color: #172C5C;
+  color: #FFF;
+}
+/* line 274, assets/scss/style.scss */
+#footer .textwidget {
+  line-height: 1.5;
+  color: #FFF;
+}
+/* line 277, assets/scss/style.scss */
+#footer .textwidget p {
+  letter-spacing: .2px;
+}
+
+/**
+ *
+ * Pages and posts
+ *
+ */
+/* line 289, assets/scss/style.scss */
+#posts {
+  width: auto;
+}
+
+/* line 294, assets/scss/style.scss */
+.post .post-excerpt {
+  color: #666;
+  line-height: 1.75;
+  font-weight: 300;
+  /* Register links */
+  /* LinkedIn links */
+  /* Read more links */
+}
+/* line 298, assets/scss/style.scss */
+.post .post-excerpt img {
+  margin-bottom: 50px;
+}
+/* line 301, assets/scss/style.scss */
+.post .post-excerpt h2 {
+  margin: 20px 0 50px;
+  font-size: 22px;
+  line-height: 1.75;
+  color: #2B4FA4;
+  font-weight: 700;
+}
+/* line 307, assets/scss/style.scss */
+.post .post-excerpt h2 img {
+  float: left;
+  margin: 0 40px 73px 0;
+}
+/* line 310, assets/scss/style.scss */
+.post .post-excerpt h2 img:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* line 316, assets/scss/style.scss */
+.post .post-excerpt h2 strong {
+  font-size: 36px;
+  letter-spacing: .5px;
+  margin-bottom: 0;
+}
+/* line 322, assets/scss/style.scss */
+.post .post-excerpt a {
+  color: #2B4FA4;
+  text-decoration: none;
+}
+/* line 326, assets/scss/style.scss */
+.post .post-excerpt a.button {
+  color: #FFF;
+  text-decoration: none;
+}
+/* line 330, assets/scss/style.scss */
+.post .post-excerpt table:not(:first-of-type):not(:last-of-type) {
+  text-align: center;
+  font-weight: 700;
+}
+/* line 334, assets/scss/style.scss */
+.post .post-excerpt table:not(:first-of-type):not(:last-of-type) tr:first-child {
+  background: #2B4FA4;
+  color: #FFF;
+}
+/* line 339, assets/scss/style.scss */
+.post .post-excerpt table:not(:first-of-type):not(:last-of-type) td {
+  padding: 25px 15px 20px;
+  width: 25%;
+}
+/* line 347, assets/scss/style.scss */
+.post .post-excerpt table:first-of-type td, .post .post-excerpt table:last-of-type td {
+  border: 0;
+  padding: 0;
+  font-weight: 700;
+}
+/* line 351, assets/scss/style.scss */
+.post .post-excerpt table:first-of-type td:first-child, .post .post-excerpt table:last-of-type td:first-child {
+  text-transform: uppercase;
+}
+/* line 360, assets/scss/style.scss */
+.post .post-excerpt a[href*="docs.google.com"] {
+  display: block;
+  line-height: 60px;
+  background: #2B4FA4;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 35px;
+  color: #FFF !important;
+  font-weight: 700;
+}
+/* line 373, assets/scss/style.scss */
+.post .post-excerpt a[href*="linkedin"] {
+  font-weight: bold;
+  font-family: "Roboto Slab", sans-serif;
+}
+/* line 379, assets/scss/style.scss */
+.post .post-excerpt a[href*="eqelibrium.org/"] {
+  font-weight: bold;
+  font-family: "Roboto Slab", sans-serif;
+}
+/* line 385, assets/scss/style.scss */
+.post hr {
+  margin: 0 0 75px;
+  height: 2px;
+  background: #40A9F3;
+  border: 0;
+  clear: both;
+}
+
+/* line 396, assets/scss/style.scss */
+.single-navigation a.next-post, .single-navigation a.previous-post {
+  background-color: #40A9F3;
+  padding: 0 32px;
+  width: auto;
+}
+/* line 402, assets/scss/style.scss */
+.single-navigation a.next-post {
+  background-position: 112px center;
+}
+/* line 405, assets/scss/style.scss */
+.single-navigation a.previous-post {
+  background-position: 14px center;
+}
+
+/**
+ *
+ * Responsive
+ *
+ */
+@media screen and (max-width: 580px) {
+  /* line 421, assets/scss/style.scss */
+  #features .features-box {
+    height: auto;
+  }
+}
