@@ -386,11 +386,40 @@ nav li a:hover:before {
 
 /**
  *
+ * Buttons
+ *
+ */
+/* line 417, assets/scss/style.scss */
+.button {
+  text-decoration: none;
+  padding: 10px 22px;
+  text-transform: uppercase;
+  color: #FFF;
+  text-shadow: none;
+  font-size: 24px;
+  display: inline-block;
+  font-weight: 700;
+  vertical-align: middle;
+}
+/* line 427, assets/scss/style.scss */
+.button__cta {
+  background-color: #40A9F3;
+  margin-top: 10px;
+}
+/* line 430, assets/scss/style.scss */
+.button__cta:after {
+  content: ">";
+  display: inline-block;
+  margin-left: 8px;
+}
+
+/**
+ *
  * Responsive
  *
  */
 @media screen and (max-width: 580px) {
-  /* line 421, assets/scss/style.scss */
+  /* line 449, assets/scss/style.scss */
   #features .features-box {
     height: auto;
   }

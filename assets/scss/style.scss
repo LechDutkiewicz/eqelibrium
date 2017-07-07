@@ -408,6 +408,34 @@ nav {
         }
     }
 
+    /**
+     *
+     * Buttons
+     *
+     */
+
+     .button {
+        text-decoration: none;
+        padding: 10px 22px;
+        text-transform: uppercase;
+        color: $white;
+        text-shadow: none;
+        font-size: 24px;
+        display: inline-block;
+        font-weight: 700;
+        vertical-align: middle;
+        &__cta {
+            background-color: $secondary-color;
+            margin-top: 10px;
+            &:after {
+                content: ">";
+                display: inline-block;
+                margin-left: 8px;
+            }
+        }
+    }
+
+
 
 
   /**
