@@ -8,17 +8,14 @@
   License URI: http://www.gnu.org/licenses/gpl-3.0.html
   Text Domain: lawyeria-lite-child
   Tags: black, blue, gray, white, light,silver, one-column,right-sidebar, responsive-layout, fixed-layout,custom-background,theme-options, custom-header, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready
-  */
-/**
- *
- * Mixins
- *
- */
-/**
- *
- * Body and typo
- *
- */
+*/
+/*==============================
+=            Mixins            =
+==============================*/
+/*=====  End of Mixins  ======*/
+/*=====================================
+=            Body and typo            =
+=====================================*/
 /* line 68, assets/scss/style.scss */
 body {
   background: #F2F2F2;
@@ -26,22 +23,53 @@ body {
   color: #666;
 }
 
-/**
- *
- * Elements
- *
- */
-/* line 80, assets/scss/style.scss */
+/* line 74, assets/scss/style.scss */
+.section-header {
+  font-size: 48px;
+  text-align: center;
+  margin: 40px auto 75px;
+  font-weight: 700;
+  color: #2B4FA4;
+  position: relative;
+  overflow: hidden;
+}
+/* line 82, assets/scss/style.scss */
+.section-header:before, .section-header:after {
+  content: "";
+  border-top: 1px solid rgba(43, 79, 164, 0.75);
+  display: inline-block;
+  height: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+  margin-bottom: .15em;
+  left: initial;
+}
+/* line 94, assets/scss/style.scss */
+.section-header:before {
+  right: .5em;
+  margin-left: -50%;
+}
+/* line 98, assets/scss/style.scss */
+.section-header:after {
+  left: .5em;
+  margin-right: -50%;
+}
+
+/*=====  End of Body and typo  ======*/
+/*================================
+=            Elements            =
+================================*/
+/* line 112, assets/scss/style.scss */
 .wrapper {
   height: 100%;
 }
 
-/**
- *
- * Navi
- *
- */
-/* line 90, assets/scss/style.scss */
+/*=====  End of Elements  ======*/
+/*==================================
+=            Navigation            =
+==================================*/
+/* line 123, assets/scss/style.scss */
 .header-contact {
   width: 640px;
   max-width: 100%;
@@ -51,16 +79,16 @@ body {
   line-height: 34px;
 }
 
-/* line 99, assets/scss/style.scss */
+/* line 132, assets/scss/style.scss */
 .header-left {
   margin: 40px 0 30px;
 }
-/* line 101, assets/scss/style.scss */
+/* line 134, assets/scss/style.scss */
 .header-left .logo {
   height: auto;
 }
 
-/* line 116, assets/scss/style.scss */
+/* line 149, assets/scss/style.scss */
 nav li a {
   padding: 0;
   border: 0;
@@ -71,7 +99,7 @@ nav li a {
   float: none;
   letter-spacing: .5px;
 }
-/* line 125, assets/scss/style.scss */
+/* line 158, assets/scss/style.scss */
 nav li a:before {
   content: "";
   width: 7px;
@@ -83,45 +111,44 @@ nav li a:before {
   margin-right: 8px;
   border: 1px solid #2B4FA4;
 }
-/* line 136, assets/scss/style.scss */
+/* line 169, assets/scss/style.scss */
 nav li a:hover {
   border: 0;
 }
-/* line 138, assets/scss/style.scss */
+/* line 171, assets/scss/style.scss */
 nav li a:hover:before {
   background-color: transparent;
 }
 
-/* line 146, assets/scss/style.scss */
+/* line 179, assets/scss/style.scss */
 .wide-nav {
   height: 75px;
   line-height: 75px;
   background: #172C5C;
 }
-/* line 150, assets/scss/style.scss */
+/* line 183, assets/scss/style.scss */
 .wide-nav h3 {
   color: #FFF;
   font-size: 30px;
 }
 
-/**
- *
- * Home
- *
- */
-/* line 162, assets/scss/style.scss */
+/*=====  End of Navigation  ======*/
+/*=================================
+=            Home page            =
+=================================*/
+/* line 197, assets/scss/style.scss */
 #subheader {
   height: 450px;
   position: relative;
   background-position: center 15%;
 }
-/* line 166, assets/scss/style.scss */
+/* line 201, assets/scss/style.scss */
 #subheader .subheader-color {
   background: none;
   padding: 0;
   box-shadow: none;
 }
-/* line 170, assets/scss/style.scss */
+/* line 205, assets/scss/style.scss */
 #subheader .subheader-color .full-header-content {
   position: relative;
   top: 50%;
@@ -130,44 +157,44 @@ nav li a:hover:before {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 174, assets/scss/style.scss */
+/* line 209, assets/scss/style.scss */
 #subheader .subheader-color .full-header-content h3 {
   text-shadow: none;
   font-size: 70px;
   font-weight: 700;
   line-height: 74px;
 }
-/* line 180, assets/scss/style.scss */
+/* line 215, assets/scss/style.scss */
 #subheader .subheader-color .full-header-content-no-sidebar {
   margin: 0 !important;
 }
-/* line 186, assets/scss/style.scss */
+/* line 221, assets/scss/style.scss */
 #subheader .second-subheader h3 {
   color: #2B4FA4;
   line-height: 1.4;
   font-weight: 300;
 }
 
-/* line 196, assets/scss/style.scss */
+/* line 231, assets/scss/style.scss */
 #content .content-article h3 {
   font-size: 36px;
   color: #2B4FA4;
   line-height: 1.4;
   font-weight: 300;
 }
-/* line 202, assets/scss/style.scss */
+/* line 237, assets/scss/style.scss */
 #content .content-article p {
   color: #666;
   line-height: 1.75;
 }
 
-/* line 209, assets/scss/style.scss */
+/* line 244, assets/scss/style.scss */
 #features {
   padding: 105px 0;
   box-shadow: none;
   background-image: url(images/glowna-2.png);
 }
-/* line 213, assets/scss/style.scss */
+/* line 248, assets/scss/style.scss */
 #features .features-box {
   background-color: transparent;
   padding: 30px 20px;
@@ -175,7 +202,7 @@ nav li a:hover:before {
   height: 280px;
   border: 2px solid #FFF;
 }
-/* line 219, assets/scss/style.scss */
+/* line 254, assets/scss/style.scss */
 #features .features-box h4 {
   color: #FFF;
   text-align: left;
@@ -183,56 +210,55 @@ nav li a:hover:before {
   border-bottom: 2px solid;
   padding-bottom: 25px;
 }
-/* line 226, assets/scss/style.scss */
+/* line 261, assets/scss/style.scss */
 #features .features-box p {
   color: #FFF;
   text-align: left;
   line-height: 1.75;
 }
 
-/**
- *
- * Footer
- *
- */
-/* line 240, assets/scss/style.scss */
+/*=====  End of Home page  ======*/
+/*==============================
+=            Footer            =
+==============================*/
+/* line 277, assets/scss/style.scss */
 #footer {
   background: #40A9F3;
 }
-/* line 243, assets/scss/style.scss */
+/* line 280, assets/scss/style.scss */
 #footer .footer-box:last-child {
   float: right;
 }
-/* line 246, assets/scss/style.scss */
+/* line 283, assets/scss/style.scss */
 #footer .footer-box .footer-box-title {
   text-transform: uppercase;
   font-size: 22px;
   font-family: "Roboto Slab", sans-serif;
   letter-spacing: 3px;
 }
-/* line 252, assets/scss/style.scss */
+/* line 289, assets/scss/style.scss */
 #footer .footer-box .wpcf7-text,
 #footer .footer-box .wpcf7-textarea {
   background-color: transparent;
   border: 1px solid #000;
 }
-/* line 39, assets/scss/style.scss */
+/* line 38, assets/scss/style.scss */
 #footer .footer-box .wpcf7-text::-webkit-input-placeholder, #footer .footer-box .wpcf7-textarea::-webkit-input-placeholder {
   color: #FFF;
 }
-/* line 39, assets/scss/style.scss */
+/* line 38, assets/scss/style.scss */
 #footer .footer-box .wpcf7-text:-moz-placeholder, #footer .footer-box .wpcf7-textarea:-moz-placeholder {
   color: #FFF;
 }
-/* line 39, assets/scss/style.scss */
+/* line 38, assets/scss/style.scss */
 #footer .footer-box .wpcf7-text::-moz-placeholder, #footer .footer-box .wpcf7-textarea::-moz-placeholder {
   color: #FFF;
 }
-/* line 39, assets/scss/style.scss */
+/* line 38, assets/scss/style.scss */
 #footer .footer-box .wpcf7-text:-ms-input-placeholder, #footer .footer-box .wpcf7-textarea:-ms-input-placeholder {
   color: #FFF;
 }
-/* line 260, assets/scss/style.scss */
+/* line 297, assets/scss/style.scss */
 #footer .footer-box .wpcf7-submit {
   border: 0;
   background: #FFF;
@@ -241,32 +267,55 @@ nav li a:hover:before {
   color: #2B4FA4;
   letter-spacing: 5px;
 }
-/* line 267, assets/scss/style.scss */
+/* line 304, assets/scss/style.scss */
 #footer .footer-box .wpcf7-submit:hover, #footer .footer-box .wpcf7-submit:focus {
   background-color: #172C5C;
   color: #FFF;
 }
-/* line 274, assets/scss/style.scss */
+/* line 311, assets/scss/style.scss */
 #footer .textwidget {
   line-height: 1.5;
   color: #FFF;
 }
-/* line 277, assets/scss/style.scss */
+/* line 314, assets/scss/style.scss */
 #footer .textwidget p {
   letter-spacing: .2px;
 }
 
-/**
- *
- * Pages and posts
- *
- */
-/* line 289, assets/scss/style.scss */
+/*=====  End of Footer  ======*/
+/*=======================================
+=            Pages and posts            =
+=======================================*/
+/* line 327, assets/scss/style.scss */
 #posts {
   width: auto;
+  float: none;
+}
+/* line 330, assets/scss/style.scss */
+#posts .post {
+  padding-bottom: 20px;
+}
+/* line 332, assets/scss/style.scss */
+#posts .post:not(:last-child) {
+  margin-bottom: 75px;
+  border-bottom: 2px solid #40A9F3;
 }
 
-/* line 294, assets/scss/style.scss */
+/* line 340, assets/scss/style.scss */
+#posts-archive .post {
+  padding-bottom: 25px;
+}
+/* line 342, assets/scss/style.scss */
+#posts-archive .post:not(:last-child) {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #F2F2F2;
+}
+
+/* line 349, assets/scss/style.scss */
+.post {
+  /*----------  post archive  ----------*/
+}
+/* line 350, assets/scss/style.scss */
 .post .post-excerpt {
   color: #666;
   line-height: 1.75;
@@ -275,11 +324,11 @@ nav li a:hover:before {
   /* LinkedIn links */
   /* Read more links */
 }
-/* line 298, assets/scss/style.scss */
+/* line 354, assets/scss/style.scss */
 .post .post-excerpt img {
   margin-bottom: 50px;
 }
-/* line 301, assets/scss/style.scss */
+/* line 357, assets/scss/style.scss */
 .post .post-excerpt h2 {
   margin: 20px 0 50px;
   font-size: 22px;
@@ -287,59 +336,59 @@ nav li a:hover:before {
   color: #2B4FA4;
   font-weight: 700;
 }
-/* line 307, assets/scss/style.scss */
+/* line 363, assets/scss/style.scss */
 .post .post-excerpt h2 img {
   float: left;
   margin: 0 40px 73px 0;
 }
-/* line 310, assets/scss/style.scss */
+/* line 366, assets/scss/style.scss */
 .post .post-excerpt h2 img:before {
   content: "";
   display: block;
   clear: both;
 }
-/* line 316, assets/scss/style.scss */
+/* line 372, assets/scss/style.scss */
 .post .post-excerpt h2 strong {
   font-size: 36px;
   letter-spacing: .5px;
   margin-bottom: 0;
 }
-/* line 322, assets/scss/style.scss */
+/* line 378, assets/scss/style.scss */
 .post .post-excerpt a {
   color: #2B4FA4;
   text-decoration: none;
 }
-/* line 326, assets/scss/style.scss */
+/* line 382, assets/scss/style.scss */
 .post .post-excerpt a.button {
   color: #FFF;
   text-decoration: none;
 }
-/* line 330, assets/scss/style.scss */
+/* line 386, assets/scss/style.scss */
 .post .post-excerpt table:not(:first-of-type):not(:last-of-type) {
   text-align: center;
   font-weight: 700;
 }
-/* line 334, assets/scss/style.scss */
+/* line 390, assets/scss/style.scss */
 .post .post-excerpt table:not(:first-of-type):not(:last-of-type) tr:first-child {
   background: #2B4FA4;
   color: #FFF;
 }
-/* line 339, assets/scss/style.scss */
+/* line 395, assets/scss/style.scss */
 .post .post-excerpt table:not(:first-of-type):not(:last-of-type) td {
   padding: 25px 15px 20px;
   width: 25%;
 }
-/* line 347, assets/scss/style.scss */
+/* line 403, assets/scss/style.scss */
 .post .post-excerpt table:first-of-type td, .post .post-excerpt table:last-of-type td {
   border: 0;
   padding: 0;
   font-weight: 700;
 }
-/* line 351, assets/scss/style.scss */
+/* line 407, assets/scss/style.scss */
 .post .post-excerpt table:first-of-type td:first-child, .post .post-excerpt table:last-of-type td:first-child {
   text-transform: uppercase;
 }
-/* line 360, assets/scss/style.scss */
+/* line 416, assets/scss/style.scss */
 .post .post-excerpt a[href*="docs.google.com"] {
   display: block;
   line-height: 60px;
@@ -350,46 +399,78 @@ nav li a:hover:before {
   color: #FFF !important;
   font-weight: 700;
 }
-/* line 373, assets/scss/style.scss */
+/* line 429, assets/scss/style.scss */
 .post .post-excerpt a[href*="linkedin"] {
   font-weight: bold;
   font-family: "Roboto Slab", sans-serif;
 }
-/* line 379, assets/scss/style.scss */
+/* line 435, assets/scss/style.scss */
 .post .post-excerpt a[href*="eqelibrium.org/"] {
   font-weight: bold;
   font-family: "Roboto Slab", sans-serif;
 }
-/* line 385, assets/scss/style.scss */
+/* line 441, assets/scss/style.scss */
 .post hr {
-  margin: 0 0 75px;
+  margin: 20px 0 75px;
   height: 2px;
   background: #40A9F3;
   border: 0;
   clear: both;
 }
+/* line 447, assets/scss/style.scss */
+.post hr.gray {
+  background: #cccccc;
+}
+/* line 450, assets/scss/style.scss */
+.post hr.thin {
+  height: 1px;
+  margin: 20px 0 20px;
+}
+/* line 459, assets/scss/style.scss */
+.post.post-archive .post-image {
+  width: 40%;
+  margin: 0 20px 0 0;
+}
+/* line 462, assets/scss/style.scss */
+.post.post-archive .post-image img {
+  margin-bottom: 0;
+}
+/* line 466, assets/scss/style.scss */
+.post.post-archive h3 {
+  margin: 0 auto 10px;
+  font-size: 18px;
+}
+/* line 470, assets/scss/style.scss */
+.post.post-archive .post-image,
+.post.post-archive .post-content {
+  display: inline-block;
+  vertical-align: middle;
+}
 
-/* line 396, assets/scss/style.scss */
+/* line 480, assets/scss/style.scss */
 .single-navigation a.next-post, .single-navigation a.previous-post {
   background-color: #40A9F3;
   padding: 0 32px;
   width: auto;
 }
-/* line 402, assets/scss/style.scss */
+/* line 486, assets/scss/style.scss */
 .single-navigation a.next-post {
   background-position: 112px center;
 }
-/* line 405, assets/scss/style.scss */
+/* line 489, assets/scss/style.scss */
 .single-navigation a.previous-post {
   background-position: 14px center;
 }
 
-/**
- *
- * Buttons
- *
- */
-/* line 417, assets/scss/style.scss */
+/*=====  End of Pages and posts  ======*/
+/*===================================
+=            Blog layout            =
+===================================*/
+/*=====  End of Blog layout  ======*/
+/*===============================
+=            Buttons            =
+===============================*/
+/* line 520, assets/scss/style.scss */
 .button {
   text-decoration: none;
   padding: 10px 22px;
@@ -401,26 +482,67 @@ nav li a:hover:before {
   font-weight: 700;
   vertical-align: middle;
 }
-/* line 427, assets/scss/style.scss */
+/* line 530, assets/scss/style.scss */
 .button__cta {
   background-color: #40A9F3;
   margin-top: 10px;
 }
-/* line 430, assets/scss/style.scss */
+/* line 533, assets/scss/style.scss */
 .button__cta:after {
   content: ">";
   display: inline-block;
   margin-left: 8px;
 }
 
-/**
- *
- * Responsive
- *
- */
+/*=====  End of Buttons  ======*/
+/*=========================================
+=            Social media list            =
+=========================================*/
+/* line 548, assets/scss/style.scss */
+.list__social-media {
+  list-style: none;
+  margin: 14px 0 0;
+  float: right;
+}
+/* line 552, assets/scss/style.scss */
+.list__social-media li {
+  display: inline-block;
+}
+/* line 554, assets/scss/style.scss */
+.list__social-media li:not(:last-child) {
+  margin-right: 20px;
+}
+/* line 558, assets/scss/style.scss */
+.list__social-media a {
+  font-size: 16px;
+  color: #40A9F3;
+  line-height: 1.1;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+}
+/* line 565, assets/scss/style.scss */
+.list__social-media a:hover, .list__social-media a:focus {
+  color: #1093f0;
+}
+
+/*=====  End of Social media list  ======*/
+/*==================================
+=            Responsive            =
+==================================*/
 @media screen and (max-width: 580px) {
-  /* line 449, assets/scss/style.scss */
+  /* line 582, assets/scss/style.scss */
   #features .features-box {
     height: auto;
   }
 }
+@media screen and (max-width: 1024px) {
+  /*----------  Social media list  ----------*/
+  /* line 591, assets/scss/style.scss */
+  .list__social-media {
+    float: none;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+}
+/*=====  End of Responsive  ======*/
