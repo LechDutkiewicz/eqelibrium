@@ -8,446 +8,591 @@
   License URI: http://www.gnu.org/licenses/gpl-3.0.html
   Text Domain: lawyeria-lite-child
   Tags: black, blue, gray, white, light,silver, one-column,right-sidebar, responsive-layout, fixed-layout,custom-background,theme-options, custom-header, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready
-  */
+*/
 
-  // @import "compass";
-  @import 'compass/css3';
-  @import 'compass/css3/animation';
-  @import 'compass/css3/transition';
-  @import 'compass/css3/transform';
 
-  $brand-color:     #2B4FA4;
-  $secondary-color: #40A9F3;
-  $text-color:      #666;
-  $hover-color:     #172C5C;
+@import 'compass/css3';
+@import 'compass/css3/animation';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
 
-  $white:           #FFF;
-  $black:           #000;
-  $grey:            #F2F2F2;
+$brand-color:     #2B4FA4;
+$secondary-color: #40A9F3;
+$text-color:      #666;
+$hover-color:     #172C5C;
 
-  $mobile:          "screen and (max-width: 580px)";
+$white:           #FFF;
+$black:           #000;
+$gray:            #F2F2F2;
 
-  $roboto:          "Roboto Slab", sans-serif;
+$mobile:          "screen and (max-width: 580px)";
+$hamburger:       "screen and (max-width: 1024px)";
 
-  /**
-   *
-   * Mixins
-   *
-   */
+$roboto:          "Roboto Slab", sans-serif;
 
-   @mixin optional-at-root($sel) {
-    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
-        @content;
-    }
+/*==============================
+=            Mixins            =
+==============================*/
+
+@mixin optional-at-root($sel) {
+	@at-root #{if(not &, $sel, selector-append(&, $sel))} {
+		@content;
+	}
 }
 
 @mixin placeholder {
-    @include optional-at-root('::-webkit-input-placeholder') {
-        @content;
-    }
+	@include optional-at-root('::-webkit-input-placeholder') {
+		@content;
+	}
 
-    @include optional-at-root(':-moz-placeholder') {
-        @content;
-    }
+	@include optional-at-root(':-moz-placeholder') {
+		@content;
+	}
 
-    @include optional-at-root('::-moz-placeholder') {
-        @content;
-    }
+	@include optional-at-root('::-moz-placeholder') {
+		@content;
+	}
 
-    @include optional-at-root(':-ms-input-placeholder') {
-        @content;
-    }
+	@include optional-at-root(':-ms-input-placeholder') {
+		@content;
+	}
 }
 
-   /**
-    *
-    * Body and typo
-    *
-    */   
+/*=====  End of Mixins  ======*/
 
-    body {
-        background: $grey;
-        font-size: 16px;
-        color: $text-color;
-    }
 
-  /**
-   *
-   * Elements
-   *
-   */
+/*=====================================
+=            Body and typo            =
+=====================================*/
 
-   .wrapper {
-    height: 100%;
+body {
+	background: $gray;
+	font-size: 16px;
+	color: $text-color;
 }
 
-  /**
-   *
-   * Navi
-   *
-   */
+.section-header {
+	font-size: 48px;
+	text-align: center;
+	margin: 40px auto 75px;
+	font-weight: 700;
+	color: $brand-color;
+	position: relative;
+	overflow: hidden;
+	&:before, &:after {
+		content: "";
+		// position: absolute;
+		border-top: 1px solid rgba($brand-color, .75);
+		display: inline-block;
+		height: 0;
+		position: relative;
+		vertical-align: middle;
+		width: 50%;
+		margin-bottom: .15em;
+		left: initial;
+	}
+	&:before {
+		right: .5em;
+		margin-left: -50%;
+	}
+	&:after {
+		left: .5em;
+		margin-right: -50%;
+	}
+}
 
-   .header-contact {
-    width: 640px;
-    max-width: 100%;
-    color: $brand-color;
-    font-weight: 300;
-    margin-top: 40px;
-    line-height: 34px;
+/*=====  End of Body and typo  ======*/
+
+
+
+/*================================
+=            Elements            =
+================================*/
+
+.wrapper {
+	height: 100%;
+}
+
+/*=====  End of Elements  ======*/
+
+
+/*==================================
+=            Navigation            =
+==================================*/
+
+.header-contact {
+	width: 640px;
+	max-width: 100%;
+	color: $brand-color;
+	font-weight: 300;
+	margin-top: 40px;
+	line-height: 34px;
 }
 
 .header-left {
-    margin: 40px 0 30px;
-    .logo {
-        height: auto;
-        
-    }
+	margin: 40px 0 30px;
+	.logo {
+		height: auto;
+
+	}
 }
 
 nav {
-    div {
-        > ul {
-            > li {
+	div {
+		> ul {
+			> li {
 
-            }
-        }
-    }
-    li {
-        a {
-            padding: 0;
-            border: 0;
-            color: $brand-color;
-            text-transform: uppercase;
-            display: inline-block;
-            vertical-align: middle;
-            float: none;
-            letter-spacing: .5px;
-            &:before {
-                content: "";
-                width: 7px;
-                height: 7px;
-                display: inline-block;
-                vertical-align: middle;
-                border-radius: 50%;
-                background: $brand-color;
-                margin-right: 8px;
-                border: 1px solid $brand-color;
-            }
-            &:hover {
-                border: 0;
-                &:before {
-                    background-color: transparent;
-                }
-            }
-        }
-    }
+			}
+		}
+	}
+	li {
+		a {
+			padding: 0;
+			border: 0;
+			color: $brand-color;
+			text-transform: uppercase;
+			display: inline-block;
+			vertical-align: middle;
+			float: none;
+			letter-spacing: .5px;
+			&:before {
+				content: "";
+				width: 7px;
+				height: 7px;
+				display: inline-block;
+				vertical-align: middle;
+				border-radius: 50%;
+				background: $brand-color;
+				margin-right: 8px;
+				border: 1px solid $brand-color;
+			}
+			&:hover {
+				border: 0;
+				&:before {
+					background-color: transparent;
+				}
+			}
+		}
+	}
 }
 
 .wide-nav {
-    height: 75px;
-    line-height: 75px;
-    background: $hover-color;
-    h3 {
-        color: $white;
-        font-size: 30px;
-    }
+	height: 75px;
+	line-height: 75px;
+	background: $hover-color;
+	h3 {
+		color: $white;
+		font-size: 30px;
+	}
 }
 
-  /**
-   *
-   * Home
-   *
-   */  
+/*=====  End of Navigation  ======*/
 
-   #subheader {
-    height: 450px;
-    position: relative;
-    background-position: center 15%;
-    .subheader-color {
-        background: none;
-        padding: 0;
-        box-shadow: none;
-        .full-header-content {
-            position: relative;
-            top: 50%;
-            @include transform(translateY(-50%));
-            h3 {
-                text-shadow: none;
-                font-size: 70px;
-                font-weight: 700;
-                line-height: 74px;
-            }
-            &-no-sidebar {
-                margin: 0!important;
-            }
-        }
-    }
-    .second-subheader {
-        h3 {
-            color: $brand-color;
-            line-height: 1.4;
-            font-weight: 300;
-        }
-    }
+
+
+/*=================================
+=            Home page            =
+=================================*/
+
+#subheader {
+	height: 450px;
+	position: relative;
+	background-position: center 15%;
+	.subheader-color {
+		background: none;
+		padding: 0;
+		box-shadow: none;
+		.full-header-content {
+			position: relative;
+			top: 50%;
+			@include transform(translateY(-50%));
+			h3 {
+				text-shadow: none;
+				font-size: 70px;
+				font-weight: 700;
+				line-height: 74px;
+			}
+			&-no-sidebar {
+				margin: 0!important;
+			}
+		}
+	}
+	.second-subheader {
+		h3 {
+			color: $brand-color;
+			line-height: 1.4;
+			font-weight: 300;
+		}
+	}
 }
 
 #content {
-    .content-article {
-        h3 {
-            font-size: 36px;
-            color: $brand-color;
-            line-height: 1.4;
-            font-weight: 300;
-        }
-        p {
-            color: $text-color;
-            line-height: 1.75;
-        }
-    }
+	.content-article {
+		h3 {
+			font-size: 36px;
+			color: $brand-color;
+			line-height: 1.4;
+			font-weight: 300;
+		}
+		p {
+			color: $text-color;
+			line-height: 1.75;
+		}
+	}
 }
 
 #features {
-    padding: 105px 0;
-    box-shadow: none;
-    background-image: url(images/glowna-2.png);
-    .features-box {
-        background-color: transparent;
-        padding: 30px 20px;
-        box-shadow: none;
-        height: 280px;
-        border: 2px solid $white;
-        h4 {
-            color: $white;
-            text-align: left;
-            margin: 0 0 25px;
-            border-bottom: 2px solid;
-            padding-bottom: 25px;
-        }
-        p {
-            color: $white;
-            text-align: left;
-            line-height: 1.75;
-        }
-    }    
+	padding: 105px 0;
+	box-shadow: none;
+	background-image: url(images/glowna-2.png);
+	.features-box {
+		background-color: transparent;
+		padding: 30px 20px;
+		box-shadow: none;
+		height: 280px;
+		border: 2px solid $white;
+		h4 {
+			color: $white;
+			text-align: left;
+			margin: 0 0 25px;
+			border-bottom: 2px solid;
+			padding-bottom: 25px;
+		}
+		p {
+			color: $white;
+			text-align: left;
+			line-height: 1.75;
+		}
+	}
 }
 
-  /**
-   *
-   * Footer
-   *
-   */
+/*=====  End of Home page  ======*/
 
-   #footer {
-    background: $secondary-color;
-    .footer-box {
-        &:last-child {
-            float: right;
-        }
-        .footer-box-title {
-            text-transform: uppercase;
-            font-size: 22px;
-            font-family: $roboto;
-            letter-spacing: 3px;
-        }
-        .wpcf7-text,
-        .wpcf7-textarea {
-            background-color: transparent;
-            border: 1px solid $black;
-            @include placeholder {
-                color: $white;
-            }
-        }
-        .wpcf7-submit {
-            border: 0;
-            background: $white;
-            box-shadow: none;
-            text-transform: uppercase;
-            color: $brand-color;
-            letter-spacing: 5px;
-            &:hover,
-            &:focus {
-                background-color: $hover-color;
-                color: $white;
-            }
-        }
-    }
-    .textwidget {
-        line-height: 1.5;
-        color: $white;
-        p {
-            letter-spacing: .2px;
-        }
-    }
+
+
+/*==============================
+=            Footer            =
+==============================*/
+
+#footer {
+	background: $secondary-color;
+	.footer-box {
+		&:last-child {
+			float: right;
+		}
+		.footer-box-title {
+			text-transform: uppercase;
+			font-size: 22px;
+			font-family: $roboto;
+			letter-spacing: 3px;
+		}
+		.wpcf7-text,
+		.wpcf7-textarea {
+			background-color: transparent;
+			border: 1px solid $black;
+			@include placeholder {
+				color: $white;
+			}
+		}
+		.wpcf7-submit {
+			border: 0;
+			background: $white;
+			box-shadow: none;
+			text-transform: uppercase;
+			color: $brand-color;
+			letter-spacing: 5px;
+			&:hover,
+			&:focus {
+				background-color: $hover-color;
+				color: $white;
+			}
+		}
+	}
+	.textwidget {
+		line-height: 1.5;
+		color: $white;
+		p {
+			letter-spacing: .2px;
+		}
+	}
 }
 
-   /**
-    *
-    * Pages and posts
-    *
-    */
-
-    #posts {
-        width: auto;
-    }
-
-    .post {
-        .post-excerpt {
-            color: $text-color;
-            line-height: 1.75;
-            font-weight: 300;
-            img {
-                margin-bottom: 50px;
-            }
-            h2 {
-                margin: 20px 0 50px;
-                font-size: 22px;
-                line-height: 1.75;
-                color: $brand-color;
-                font-weight: 700;
-                img {
-                    float: left;
-                    margin: 0 40px 73px 0;
-                    &:before {
-                        content: "";
-                        display: block;
-                        clear: both;
-                    }
-                }
-                strong {
-                    font-size: 36px;
-                    letter-spacing: .5px;
-                    margin-bottom: 0;
-                }
-            }
-            a {
-                color: $brand-color;
-                text-decoration: none;
-            }
-            a.button {
-                color: $white;
-                text-decoration: none;
-            }
-            table:not(:first-of-type):not(:last-of-type) {
-                text-align: center;
-                font-weight: 700;
-                tr {
-                    &:first-child {
-                        background: $brand-color;
-                        color: $white;
-                    }
-                }
-                td {
-                    padding: 25px 15px 20px;
-                    width: 25%;
-                }
-            }
-            table {
-                &:first-of-type,
-                &:last-of-type {
-                    td {
-                        border: 0;
-                        padding: 0;
-                        font-weight: 700;
-                        &:first-child {
-                            text-transform: uppercase;
-                        }
-                    }
-                }
-            }
-
-            /* Register links */            
-
-            a[href*="docs.google.com"] {
-                display: block;
-                line-height: 60px;
-                background: $brand-color;
-                text-align: center;
-                font-size: 24px;
-                margin-top: 35px;
-                color: $white!important;
-                font-weight: 700;
-            }
-
-            /* LinkedIn links */   
-
-            a[href*="linkedin"] {
-                font-weight: bold;
-                font-family: $roboto;
-            }
-
-            /* Read more links */
-            a[href*="eqelibrium.org/"] {
-                font-weight: bold;
-                font-family: $roboto;
-            }
-
-        }
-        hr {
-            margin: 0 0 75px;
-            height: 2px;
-            background: $secondary-color;
-            border: 0;
-            clear: both;
-        }
-    }
-
-    .single-navigation {
-        a {
-            &.next-post,
-            &.previous-post {
-                background-color: $secondary-color;
-                padding: 0 32px;
-                width: auto;
-            }
-            &.next-post {
-                background-position: 112px center;
-            }
-            &.previous-post {
-                background-position: 14px center;
-            }
-        }
-    }
-
-    /**
-     *
-     * Buttons
-     *
-     */
-
-     .button {
-        text-decoration: none;
-        padding: 10px 22px;
-        text-transform: uppercase;
-        color: $white;
-        text-shadow: none;
-        font-size: 24px;
-        display: inline-block;
-        font-weight: 700;
-        vertical-align: middle;
-        &__cta {
-            background-color: $secondary-color;
-            margin-top: 10px;
-            &:after {
-                content: ">";
-                display: inline-block;
-                margin-left: 8px;
-            }
-        }
-    }
+/*=====  End of Footer  ======*/
 
 
+/*=======================================
+=            Pages and posts            =
+=======================================*/
 
-
-  /**
-   *
-   * Responsive
-   *
-   */  
-
-   @media #{$mobile} {
-    #features {
-        .features-box {
-            height: auto;
-        }
-    }
+#posts {
+	width: auto;
+	float: none;
+	.post {
+		padding-bottom: 20px;
+		&:not(:last-child) {
+			margin-bottom: 75px;
+			border-bottom: 2px solid $secondary-color;
+		}
+	}
 }
+
+#posts-archive {
+	.post {
+		padding-bottom: 25px;
+		&:not(:last-child) {
+			margin-bottom: 25px;
+			border-bottom: 1px solid $gray;
+		}
+	}
+}
+
+.post {
+	.post-excerpt {
+		color: $text-color;
+		line-height: 1.75;
+		font-weight: 300;
+		img {
+			margin-bottom: 50px;
+		}
+		h2 {
+			margin: 20px 0 50px;
+			font-size: 22px;
+			line-height: 1.75;
+			color: $brand-color;
+			font-weight: 700;
+			img {
+				float: left;
+				margin: 0 40px 73px 0;
+				&:before {
+					content: "";
+					display: block;
+					clear: both;
+				}
+			}
+			strong {
+				font-size: 36px;
+				letter-spacing: .5px;
+				margin-bottom: 0;
+			}
+		}
+		a {
+			color: $brand-color;
+			text-decoration: none;
+		}
+		a.button {
+			color: $white;
+			text-decoration: none;
+		}
+		table:not(:first-of-type):not(:last-of-type) {
+			text-align: center;
+			font-weight: 700;
+			tr {
+				&:first-child {
+					background: $brand-color;
+					color: $white;
+				}
+			}
+			td {
+				padding: 25px 15px 20px;
+				width: 25%;
+			}
+		}
+		table {
+			&:first-of-type,
+			&:last-of-type {
+				td {
+					border: 0;
+					padding: 0;
+					font-weight: 700;
+					&:first-child {
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+
+		/* Register links */
+
+		a[href*="docs.google.com"] {
+			display: block;
+			line-height: 60px;
+			background: $brand-color;
+			text-align: center;
+			font-size: 24px;
+			margin-top: 35px;
+			color: $white!important;
+			font-weight: 700;
+		}
+
+		/* LinkedIn links */   
+
+		a[href*="linkedin"] {
+			font-weight: bold;
+			font-family: $roboto;
+		}
+
+		/* Read more links */
+		a[href*="eqelibrium.org/"] {
+			font-weight: bold;
+			font-family: $roboto;
+		}
+
+	}
+	hr {
+		margin: 20px 0 75px;
+		height: 2px;
+		background: $secondary-color;
+		border: 0;
+		clear: both;
+		&.gray {
+			background: darken( $gray, 15% );
+		}
+		&.thin {
+			height: 1px;
+			margin: 20px 0 20px;
+		}
+	}
+
+	/*----------  post archive  ----------*/
+
+	&.post-archive {
+		.post-image {
+			width: 40%;
+			margin: 0 20px 0 0;
+			img {
+				margin-bottom: 0;
+			}
+		}
+		h3 {
+			margin: 0 auto 10px;
+			font-size: 18px;
+		}
+		.post-image,
+		.post-content {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
+
+.single-navigation {
+	a {
+		&.next-post,
+		&.previous-post {
+			background-color: $secondary-color;
+			padding: 0 32px;
+			width: auto;
+		}
+		&.next-post {
+			background-position: 112px center;
+		}
+		&.previous-post {
+			background-position: 14px center;
+		}
+	}
+}
+
+/*=====  End of Pages and posts  ======*/
+
+
+/*===================================
+=            Blog layout            =
+===================================*/
+
+// .blog {
+// 	h2 {
+// 		margin: 20px 0 50px;
+// 		font-size: 22px;
+// 		line-height: 1.75;
+// 		color: $brand-color;
+// 		font-weight: 700;
+// 	}
+// }
+
+/*=====  End of Blog layout  ======*/
+
+
+
+/*===============================
+=            Buttons            =
+===============================*/
+
+.button {
+	text-decoration: none;
+	padding: 10px 22px;
+	text-transform: uppercase;
+	color: $white;
+	text-shadow: none;
+	font-size: 24px;
+	display: inline-block;
+	font-weight: 700;
+	vertical-align: middle;
+	&__cta {
+		background-color: $secondary-color;
+		margin-top: 10px;
+		&:after {
+			content: ">";
+			display: inline-block;
+			margin-left: 8px;
+		}
+	}
+}
+
+/*=====  End of Buttons  ======*/
+
+
+/*=========================================
+=            Social media list            =
+=========================================*/
+
+.list__social-media {
+	list-style: none;
+	margin: 14px 0 0;
+	float: right;
+	li {
+		display: inline-block;
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+	}
+	a {
+		font-size: 16px;
+		color: $secondary-color;
+		line-height: 1.1;
+		width: auto;
+		height: auto;
+		text-decoration: none;
+		&:hover, &:focus {
+			color: darken($secondary-color, 10%);
+		}
+	}
+}
+
+/*=====  End of Social media list  ======*/
+
+
+
+
+/*==================================
+=            Responsive            =
+==================================*/
+
+@media #{$mobile} {
+	#features {
+		.features-box {
+			height: auto;
+		}
+	}
+}
+
+@media #{$hamburger} {
+
+	/*----------  Social media list  ----------*/
+	.list__social-media {
+		float: none;
+		margin: 0 auto 20px;
+		text-align: center;
+	}	
+}
+
+/*=====  End of Responsive  ======*/
