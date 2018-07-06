@@ -11,6 +11,21 @@ add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 define('THEME_PATH',get_stylesheet_directory().'/');
 define('THEME_URL',get_stylesheet_directory_uri().'/');
 define('EXTENSIONS_PATH',THEME_PATH.'lib/extensions/');
+define('CUSTOM_FIELDS_PATH',THEME_PATH.'lib/custom_fields/');
+
+$sage_includes = [
+	'lib/assets.php',    // Scripts and stylesheets
+	'lib/setup.php',     // Theme setup
+];
+
+foreach ($sage_includes as $file) {
+	if (!$filepath = locate_template($file)) {
+		trigger_error(sprintf(__('Error locating %s for inclusion', 'sage'), $file), E_USER_ERROR);
+	}
+
+	require_once $filepath;
+}
+unset($file, $filepath);
 
 if (is_readable(EXTENSIONS_PATH)) {
 	$sage_extensions = scandir(EXTENSIONS_PATH);
@@ -37,6 +52,17 @@ if (is_readable(EXTENSIONS_PATH)) {
 					}
 				}
 			}
+		}
+	}
+}
+
+if (is_readable(CUSTOM_FIELDS_PATH)) {
+	$sage_custom_fields = scandir(CUSTOM_FIELDS_PATH);
+
+	foreach ($sage_custom_fields as $custom_field) {
+		$file = CUSTOM_FIELDS_PATH.$custom_field;
+		if(is_file($file)) {
+			require_once($file);
 		}
 	}
 }

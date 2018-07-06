@@ -26,6 +26,7 @@
 					'ignore_sticky_posts'	=> true,
 					'meta_key'				=> 'start_date',
 					'orderby'				=> 'meta_value_num',
+					'order'					=> 'ASC',
 					'paged'					=> $paged,
 					'meta_query'			=> array(
 						array(
@@ -89,8 +90,9 @@
 			$archived_events = new WP_Query( $archived_args );
 			if ( $archived_events->have_posts() ) : 
 				?>
-				<h2 class="section-header"><?php _e("Archive", 'lawyeria-lite'); ?></h2>
+				<h2 class="section-header"><?php _e("Finished camps", 'lawyeria-lite'); ?></h2>
 				<?php while ( $archived_events->have_posts() ) : $archived_events->the_post();
+					$feat_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 					?>
 					<article <?php post_class( 'post post-archive' ); ?>>
 						<div class="post-excerpt">
