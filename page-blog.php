@@ -95,14 +95,14 @@
 					$feat_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 					?>
 					<article <?php post_class( 'post post-archive' ); ?>>
-						<div class="post-excerpt">
+						<div class="post-excerpt grid-x grid-margin-x align-middle">
 							<?php
 							if ( $feat_image != NULL ) { ?>
-								<div class="post-image">
+								<div class="cell small-12 medium-6 post-image">
 									<img src="<?php echo $feat_image[0]; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
 								</div><!--/.post-image-->
 							<?php } ?>
-							<div class="post-content">
+							<div class="cell small-12 medium-6 post-content">
 								<h3>
 									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 										<?php the_title(); ?>

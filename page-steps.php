@@ -28,8 +28,14 @@
 					<div class="post">
 
 						<div class="post-excerpt">
-							<?php the_content(); ?>
-
+							<div class="grid-x align-justify">
+								<div class="cell small-12 large-5">
+									<?php the_post_thumbnail( 'medium_large' ); ?>
+								</div>
+								<div class="cell-small-12 large-6">
+									<?php the_content(); ?>
+								</div>
+							</div>
 							<?php
 
 							// check if the repeater field has rows of data

@@ -12,6 +12,46 @@
 
 (function($) {
 
+	var $root = $('html, body');
+
+  // animate scrolling
+  var smoothScroll = function() {
+
+  	if(window.location.hash) {
+	  // get hash from url
+	  var hash = window.location.hash.substring(1);
+	  // find position of element with ID retreived from hash
+	  var position = $('#'+hash).offset();
+	  $('html, body').animate({
+	  	scrollTop: position.top - 150
+	  }, 800);
+	}
+
+	// smooth scroll all links with hash in anchor
+	$('a[href^=#]:not([data-toggle="tab"]):not(.dropdown-item)').on('click', function() {
+		event.preventDefault();
+		if ($(this).hasClass("nav-link")) {
+			if (viewport.is("<=" + $("nav.navbar").attr("toggle-on"))) {
+				$(".navbar-toggler").trigger("click");
+			}
+		}
+
+		$root.animate({
+			scrollTop: $(this.hash).offset().top - 150
+		}, 800);
+
+		return false;
+	});
+
+	// smooth scroll all buttons with scrollto atrribute
+	$("button[data-scrollto]").on("click", function(){
+		$root.animate({
+			scrollTop: $($(this).data("scrollto")).offset().top - 150
+		}, 800);
+	});
+
+};
+
 	// Use this variable to set up the common and page specific functions. If you
 	// rename this variable, you will also need to rename the namespace below.
 	var Sage = {
@@ -25,7 +65,12 @@
 
 			},
 			finalize: function() {
-				// JavaScript to be fired on all pages, after page specific JS is fired
+				// JavaScript to be fired on all pages, after page specific JS is fired				
+
+				if ( typeof smoothScroll === "function" ) {
+
+					smoothScroll();
+				}
 
 			}
 		},
