@@ -7,16 +7,23 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "foundation-sites": "^6.4.3"
+    "foundation-sites": "^6.4.3",
+    "motion-ui": "1.2.3",
+    "lazysizes": "^5.1.0"
   },
   "resolutions": {
     "jquery": "2.2.0"
   },
   "overrides": {
-    "main": [
-      "scss/foundation.scss",
-      "js/foundation.core.js",
-      "js/foundation.accordion.js"
-    ]
+    "motion-ui": {
+      "dependencies": {
+        "jquery": "~2.2.0",
+        "foundation-sites": "^6.3.1"
+      },
+      "main": [
+        "dist/motion-ui.js",
+        "src/motion-ui.scss"
+      ]
+    }
   }
 }

@@ -11,6 +11,7 @@ add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 define('THEME_PATH',get_stylesheet_directory().'/');
 define('THEME_URL',get_stylesheet_directory_uri().'/');
 define('EXTENSIONS_PATH',THEME_PATH.'lib/extensions/');
+define('POST_TYPES_PATH',THEME_PATH.'lib/post_types/');
 define('CUSTOM_FIELDS_PATH',THEME_PATH.'lib/custom_fields/');
 
 $sage_includes = [
@@ -52,6 +53,17 @@ if (is_readable(EXTENSIONS_PATH)) {
 					}
 				}
 			}
+		}
+	}
+}
+
+if (is_readable(POST_TYPES_PATH)) {
+	$sage_post_types = scandir(POST_TYPES_PATH);
+
+	foreach ($sage_post_types as $post_type) {
+		$file = POST_TYPES_PATH.$post_type;
+		if(is_file($file)) {
+			require_once($file);
 		}
 	}
 }

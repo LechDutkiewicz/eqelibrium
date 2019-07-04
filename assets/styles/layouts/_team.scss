@@ -1,0 +1,162 @@
+/*=====================================================
+=            Reveal with team members info            =
+=====================================================*/
+
+.reveal__team {
+	padding: $reveal-padding 0;
+
+	&--part {
+		padding: rem-calc(12) 0;
+
+		@include breakpoint(medium) {
+			padding: rem-calc(20) 0;
+		}
+	}
+	&--thumb {
+		background: $secondary-color;
+
+		button {
+			width: 100%;
+		}
+		
+		img {
+			display: block;
+			margin: 0 auto;
+			max-width: 100%;
+			width: 100%;
+			height: auto;
+		}
+	}
+	&--meta {
+		border-bottom: 2px solid $secondary-color;
+	}
+
+	&--content {
+		// margin: 0 25px;
+		font-size: rem-calc(16);
+		line-height: $paragraph-lineheight;
+		text-align: justify;
+
+		> p {
+
+			&:not(:last-child) {
+				margin-bottom: $paragraph-margin-bottom;
+			}
+		}
+	}
+
+	&--title {
+		font-weight: 700;
+		font-family: $roboto;
+		color: $brand-color;
+		margin-bottom: rem-calc(6);
+		font-size: rem-calc(20);
+		
+		@include breakpoint(medium) {
+			font-size: rem-calc(28);
+		}
+	}
+
+	&--link {
+		font-weight: 700;
+		font-family: $roboto;
+		color: $brand-color;
+		text-decoration: none;
+
+		&:before {
+			content: ">";
+			display: inline-block;
+			margin-right: 6px;
+		}
+	}
+}
+
+/*=====  End of Reveal with team members info  ======*/
+
+/*===============================================
+=            Bricks on about us page            =
+===============================================*/
+
+.brick__team {
+	text-align: center;
+	margin-bottom: rem-calc(25);
+
+	@include breakpoint(medium) {
+		margin-bottom: rem-calc(50);
+	}
+
+	figure {
+		margin: 1em 20px rem-calc(20);
+		overflow: hidden;
+		position: relative;
+		font-size: 0;
+
+		@include breakpoint(medium) {
+			margin: 1em 40px rem-calc(25);
+		}
+
+		img {
+			display: block;
+			margin: auto;
+			@include transition( transform .25s ease-out );
+		}
+
+		button {
+			@include hover-focus {
+				cursor: pointer;
+
+				img {
+					@include transform( scale( 1.1) );
+				}
+			}
+		}
+
+		&:after {
+			content: "";
+			height: 22%;
+			width: 100%;
+			z-index: 1;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: $secondary-color url( $images-path + 'team-after.png' ) no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&--title {
+		font-weight: 700;
+		margin-bottom: rem-calc(10);
+		font-family: $roboto;
+		color: $brand-color;
+		font-size: rem-calc(16);
+		line-height: 1.5;
+
+		@include breakpoint(medium) {
+			font-size: rem-calc(20);
+		}
+	}
+
+	&--specialization {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		line-height: 1.2;
+
+		> li {
+			display: inline-block;
+			font-family: $roboto;
+			font-size: rem-calc(13);
+
+			&:not(:last-child) {
+
+				&:after {
+					content: ", ";
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+/*=====  End of Bricks on about us page  ======*/
