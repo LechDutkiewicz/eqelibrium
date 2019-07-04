@@ -14,17 +14,11 @@
 	}
 	&--thumb {
 		background: $secondary-color;
-
-		button {
-			width: 100%;
-		}
 		
 		img {
 			display: block;
 			margin: 0 auto;
 			max-width: 100%;
-			width: 100%;
-			height: auto;
 		}
 	}
 	&--meta {
@@ -86,22 +80,25 @@
 	}
 
 	figure {
-		margin: 1em 20px rem-calc(20);
+		margin: rem-calc(0 10 12);
 		overflow: hidden;
 		position: relative;
 		font-size: 0;
 
 		@include breakpoint(medium) {
-			margin: 1em 40px rem-calc(25);
+			margin: rem-calc(0 25 12);
 		}
 
 		img {
 			display: block;
 			margin: auto;
+			width: 100%;
 			@include transition( transform .25s ease-out );
 		}
 
 		button {
+			width: 100%;
+
 			@include hover-focus {
 				cursor: pointer;
 
@@ -126,14 +123,18 @@
 
 	&--title {
 		font-weight: 700;
-		margin-bottom: rem-calc(10);
+		margin-bottom: rem-calc(3);
 		font-family: $roboto;
 		color: $brand-color;
 		font-size: rem-calc(16);
 		line-height: 1.5;
 
 		@include breakpoint(medium) {
-			font-size: rem-calc(20);
+			font-size: rem-calc(17);
+		}
+
+		> * {
+			display: block;
 		}
 	}
 

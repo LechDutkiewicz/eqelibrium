@@ -1,3 +1,11 @@
+<?php
+
+// setup vars
+
+$first_name = get_field( 'first_name' );
+$last_name = get_field( 'last_name' );
+
+?>
 <div class="brick__team column small-6 medium-4 large-3">
 	<figure class="brick__team--thumb">
 		<?php
@@ -16,7 +24,9 @@
 		}
 		?>
 	</figure>
-	<h3 class="brick__team--title"><?= $post->post_title; ?></h3>
+	<h3 class="brick__team--title">
+		<span><?= $first_name; ?></span><span><?= $last_name; ?></span>
+	</h3>
 	<?php
 	$post_specializations = get_the_terms( $post->ID, 'member_func' );
 	if (count($post_specializations) > 0) {
@@ -72,7 +82,7 @@
 							<?= wpautop($post->post_content); ?>
 							<?php if ($linkedin_url) { ?>
 								<p>
-									<a class="reveal__team--link" href="<?= $linkedin_url; ?>" title="<?php _e( "Link to the LinkedIn profile", "sage" ); ?>" target="_blank"><?php _e( "LinkedIn Profile", "sage" ); ?></a>
+									<a class="reveal__team--link" href="<?= $linkedin_url; ?>" title="<?php _e( "Link to the LinkedIn profile", "sage" ); ?>" target="_blank"><?php _e( "LinkedIn profile", "sage" ); ?></a>
 								</p>
 							<?php } ?>
 						</div>
