@@ -96,16 +96,4 @@ function team_member_archive_pagesize( $query ) {
 	}
 }
 
-/*----------  Make 301 redirect for single page  ----------*/
-
-add_action( 'template_redirect', 'team_member_redirect_post' );
-
-function team_member_redirect_post() {
-	$queried_post_type = get_query_var('post_type');
-	if ( is_single() && 'team_member' ==  $queried_post_type ) {
-		wp_redirect( home_url(), 301 );
-		exit;
-	}
-}
-
 ?>

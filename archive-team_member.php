@@ -19,7 +19,7 @@
 	</header>
 	<section id="content">
 		<div class="wrapper cf">
-			<div class="row">
+			<div class="grid-x grid-margin-x">
 				<?php
 				if ( have_posts() ) : while ( have_posts() ) : the_post();
 					get_template_part( 'templates/team/team', 'single' );
