@@ -31,21 +31,6 @@
 						<div class="post-excerpt">
 							<?php the_content(); ?>
 						</div><!--/div .post-excerpt-->
-						<?php
-							wp_link_pages( array(
-								'before'      => '<div class="post-links"><span class="post-links-title">' . __( 'Pages:', 'lawyeria-lite' ) . '</span>',
-								'after'       => '</div>',
-								'link_before' => '<span>',
-								'link_after'  => '</span>',
-							) );
-						?>
-						<div class="post-tags">
-							<?php the_tags('<span>Tags:</span> '); ?>
-						</div><!--/div .post-tags-->
-						<div class="single-navigation cf">
-							<?php next_post_link('%link', 'Next Post', true); ?>
-							<?php previous_post_link('%link', 'Previous Post', true); ?>
-						</div><!--/div .single-navigation .cf-->
 					</div><!--/div .post-->
 					<?php endwhile; else: ?>
                     	<p><?php _e('Sorry, no posts matched your criteria.', 'lawyeria-lite'); ?></p>

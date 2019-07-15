@@ -457,7 +457,7 @@ nav {
 		}
 		table:not(:first-of-type):not(:last-of-type) {
 			text-align: center;
-			font-weight: 700;
+			// font-weight: 700;
 			tr {
 				&:first-child {
 					background: $brand-color;
