@@ -42,6 +42,14 @@ if ( !function_exists('setup_acf_tab_archives') ) {
 				'parent_slug'	=> 'theme-options',
 				'post_id'		=> 'translations',
 			));
+
+			acf_add_options_sub_page(array(
+				'page_title' 	=> 'Top Bar',
+				'menu_title' 	=> 'Top Bar',
+				'menu_slug'		=> 'theme-topbar',
+				'parent_slug'	=> 'theme-options',
+				'post_id'		=> 'topbar',
+			));
 		}
 	}
 

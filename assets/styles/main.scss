@@ -8,16 +8,16 @@
   License URI: http://www.gnu.org/licenses/gpl-3.0.html
   Text Domain: lawyeria-lite-child
   Tags: black, blue, gray, white, light,silver, one-column,right-sidebar, responsive-layout, fixed-layout,custom-background,theme-options, custom-header, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready
-*/
+  */
 
 
-@import 'compass/css3';
-@import 'compass/css3/animation';
-@import 'compass/css3/transition';
-@import 'compass/css3/transform';
+  @import 'compass/css3';
+  @import 'compass/css3/animation';
+  @import 'compass/css3/transition';
+  @import 'compass/css3/transform';
 
-@import "settings/_settings";
-@import "common/mixins";
+  @import "settings/_settings";
+  @import "common/mixins";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
@@ -176,12 +176,12 @@ strong {
 ==================================*/
 
 .header-contact {
-	width: 640px;
+	width: 440px;
 	max-width: 100%;
 	color: $brand-color;
 	font-weight: 300;
 	margin-top: 40px;
-	line-height: 34px;
+	line-height: 1.1;
 }
 
 .header-left {
@@ -280,7 +280,7 @@ nav {
 		h3 {
 			color: $brand-color;
 			line-height: 1.4;
-			font-weight: 300;
+			margin: 0 90px;
 		}
 	}
 }
@@ -291,11 +291,12 @@ nav {
 			font-size: 36px;
 			color: $brand-color;
 			line-height: 1.4;
-			font-weight: 300;
+			font-weight: normal;
 		}
 		p {
 			color: $text-color;
 			line-height: 1.75;
+			font-family: $body-font-family;
 		}
 	}
 }
@@ -419,63 +420,81 @@ nav {
 }
 
 .post {
+
 	.post-excerpt {
 		color: $text-color;
 		line-height: 1.75;
-		font-weight: 300;
-		img {
-			margin-bottom: 50px;
-		}
+
 		h2 {
 			margin: rem-calc(0 0 50);
-			font-size: 22px;
+			font-size: rem-calc(22);
 			line-height: 1;
 			color: $brand-color;
 			font-weight: 700;
+
 			img {
 				float: left;
-				margin: 0 40px 73px 0;
+				margin: rem-calc(0 40 70 0);
+
 				&:before {
 					content: "";
 					display: block;
 					clear: both;
 				}
 			}
+
 			strong {
 				font-size: 36px;
 				letter-spacing: .5px;
 				margin-bottom: 0;
 			}
 		}
+
+		img {
+			margin-bottom: 50px;
+		}
+
+		p {
+			max-width: 70ch;
+		}
+
 		a {
 			color: $brand-color;
 			text-decoration: none;
 		}
+
 		a.button {
 			color: $white;
 			text-decoration: none;
 		}
+
 		table:not(:first-of-type):not(:last-of-type) {
 			text-align: center;
-			// font-weight: 700;
+
 			tr {
+
 				&:first-child {
 					background: $brand-color;
 					color: $white;
 				}
 			}
+
 			td {
 				padding: 25px 15px 20px;
 				width: 25%;
 			}
 		}
+
 		table {
+
 			&:first-of-type,
 			&:last-of-type {
+
 				td {
 					border: 0;
 					padding: 0;
 					font-weight: 700;
+
 					&:first-child {
 						text-transform: uppercase;
 					}
@@ -514,8 +533,9 @@ nav {
 			}
 		}
 	}
+
 	hr {
-		margin: 20px 0 75px;
+		margin: rem-calc(20 0 75);
 		height: 2px;
 		background: $secondary-color;
 		border: 0;
@@ -525,7 +545,7 @@ nav {
 		}
 		&.thin {
 			height: 1px;
-			margin: 20px 0 20px;
+			margin: rem-calc(20 0);
 		}
 	}
 
@@ -549,6 +569,13 @@ nav {
 		// 	display: inline-block;
 		// 	vertical-align: middle;
 		// }
+	}
+
+	&__intro {
+
+		@media #{$mobile} {
+			display: none;
+		}
 	}
 }
 
@@ -575,6 +602,19 @@ nav {
 /*===================================
 =            Blog layout            =
 ===================================*/
+
+.page__intro {
+	margin-bottom: rem-calc(70);
+
+	p {
+		font-size: rem-calc(18);
+		max-width: 70ch;
+
+		& + p {
+			margin-top: 0.9rem;
+		}
+	}
+}
 
 // .blog {
 // 	h2 {
@@ -688,4 +728,6 @@ nav {
 
 /*=====  End of Responsive  ======*/
 
+@import "layouts/header";
 @import "layouts/team";
+@import "layouts/topbar";

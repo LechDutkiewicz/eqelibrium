@@ -1,0 +1,22 @@
+.hellobar {
+	background: $brand-color;
+	color: $white;
+	text-align: center;
+	padding: 3px 0 8px;
+
+	&__text {
+		margin: 4px 0 8px;
+		font-size: 15px;
+	}
+
+	&__cta {
+		background: $secondary-color;
+		color: $white;
+		text-decoration: none;
+		padding: 3px 15px;
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: .75pt;
+		font-weight: 700;
+	}
+}
