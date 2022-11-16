@@ -421,6 +421,12 @@ nav {
 
 .post {
 
+	.post-image {
+		max-width: 605px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.post-excerpt {
 		color: $text-color;
 		line-height: 1.75;
@@ -455,7 +461,9 @@ nav {
 		}
 
 		p {
-			max-width: 70ch;
+			max-width: 605px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		a {
@@ -486,6 +494,15 @@ nav {
 		}
 
 		table {
+
+			max-width: 605px;
+			margin-left: auto;
+			margin-right: auto;
+
+			&.table__fw {
+				max-width: 100%;
+				width: 100%;
+			}
 
 			&:first-of-type,
 			&:last-of-type {
@@ -731,3 +748,4 @@ nav {
 @import "layouts/header";
 @import "layouts/team";
 @import "layouts/topbar";
+@import "layouts/blog";

@@ -22,6 +22,20 @@
 </head>
 <body <?php body_class(); ?>>
 	<header>
+		<?php if ( get_field( 'enable_topbar', 'topbar' ) ) { ?>
+			<div class="hellobar">
+				<div class="wrapper">
+					<div class="grid-x align-center align-middle">
+						<div class="cell small-12 large-5">
+							<p class="hellobar__text"><?php the_field( 'topbar_text', 'topbar' ); ?></p>
+						</div>
+						<div class="cell small 12 large-3">
+							<a href="<?php the_field( 'topbar_button_url', 'topbar' ); ?>" class="hellobar__cta"><?php the_field( 'topbar_button_text', 'topbar' ); ?></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
 		<div class="wide-header">
 			<div class="wrapper cf">
 				<div class="header-left cf">
